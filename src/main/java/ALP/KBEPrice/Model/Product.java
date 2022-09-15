@@ -1,13 +1,14 @@
-package ALP.KBEPrice;
+package ALP.KBEPrice.Model;
 
+import java.io.Serializable;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
- * Representation of a component of a guitar
+ * Representation of a product of a guitar
  */
-public class Product {
+public class Product implements Serializable {
     
+    private String name;
     private Component hals;
     private Component steg;
     private Component korpus;
@@ -18,9 +19,10 @@ public class Product {
     private Component wirbel;
     private Component sattel;
     private Component decke;
-    private Map<String, Component> components;
+    private HashMap<String, Component> components;
 
-    public Product(Component hals,
+    public Product(String name,
+                    Component hals,
                     Component steg,
                     Component korpus,
                     Component griffbrett,
@@ -30,6 +32,7 @@ public class Product {
                     Component wirbel,
                     Component sattel,
                     Component decke){
+                        this.name = name;
                         this.hals = hals;
                         this.steg = steg;
                         this.korpus = korpus;
@@ -41,6 +44,14 @@ public class Product {
                         this.sattel = sattel;
                         this.decke = decke;
                         createMap();
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Component getHals() {
@@ -123,7 +134,7 @@ public class Product {
         this.decke = decke;
     }
 
-    public Map<String, Component> getComponents() {
+    public HashMap<String, Component> getComponents() {
         return this.components;
     }
 

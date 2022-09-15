@@ -1,9 +1,11 @@
-package ALP.KBEPrice;
+package ALP.KBEPrice.Model;
+
+import java.io.Serializable;
 
 /**
  * Representation of a component of a guitar
  */
-public class Component {
+public class Component implements Serializable{
     
     private String komponententyp;
     private String name;
