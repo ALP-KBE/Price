@@ -7,6 +7,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import ALP.RabbitMessage;
 import ALP.KBEPrice.Controller.PriceController;
 import ALP.KBEPrice.Model.Product;
 
@@ -23,9 +24,8 @@ public class RabbitMQReceiver {
     }
     
     @RabbitHandler
-    public void receiver(Serializable product) {
-        System.out.println("message angekommen " + product.toString());
-        priceController.handle(product);
+    public void receiver(RabbitMessage message) {
+        priceController.handle(message.getValue());
 
     }
 }

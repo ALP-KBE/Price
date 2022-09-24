@@ -24,12 +24,16 @@ public class Product implements Serializable {
         return this.name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public List<Component> getComponents() {
         return this.components;
+    }
+
+    public void addComponent(Component component){
+        this.components.add(component);
+    }
+
+    public void setComponents(List<Component> components) {
+        this.components = components;
     }
 
     @Override
