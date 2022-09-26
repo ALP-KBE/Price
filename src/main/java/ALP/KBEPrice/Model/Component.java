@@ -185,16 +185,17 @@ public class Component implements Serializable {
 
     @Override
     public String toString() {
-        return getKomponententyp() + ", " +
-                getName() + ", " +
-                getMaterial() + ", " +
-                getHerkunft() + ", " +
-                getFarbe() + ", " +
-                getHersteller() + ", " +
-                getForm() + ", " +
-                getGebrauchszustand() + ", " +
-                getPreis() + ", " +
-                getVerfuegbarkeit() + ", " +
-                getKlangauswirkung();
+        String string = "{\"komponententyp\":\"" + getKomponententyp() +
+                "\",\"name\":\"" + getName() +
+                "\",\"material\":\"" + getMaterial() +
+                "\",\"herkunft\":\"" + getHerkunft() +
+                "\",\"farbe\":\"" + getFarbe() +
+                "\",\"hersteller\":\"" + getHersteller() +
+                "\",\"form\":\"" + getForm() +
+                "\",\"gebrauchszustand\":\"" + getGebrauchszustand() +
+                "\",\"preis\":\"" + getPreis() +
+                "\",\"verfuegbarkeit\":\"" + getVerfuegbarkeit() +
+                "\",\"klangauswirkung\":\"" + getKlangauswirkung() + "\"}";
+        return string;
     }
 }

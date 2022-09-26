@@ -21,6 +21,10 @@ public class RabbitMessage implements Serializable {
         return type;
     }
 
+    public void setValue(Serializable value) {
+        this.value = value;
+    }
+
     public Serializable getValue() {
         return value;
     }
