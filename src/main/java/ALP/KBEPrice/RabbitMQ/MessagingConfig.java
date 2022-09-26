@@ -14,23 +14,13 @@ public class MessagingConfig {
     static final String TOPIC_EXCHANGE_NAME = "component-exchange";
 
     @Bean
-    public Queue priceQueue() {
-        return new Queue("price-queue");
-    }
-
-    @Bean
     public Queue mainQueue() {
-        return new Queue("main-queue");
+        return new Queue("philips-main-queue");
     }
 
     @Bean
     public TopicExchange exchange() {
         return new TopicExchange(TOPIC_EXCHANGE_NAME);
-    }
-
-    @Bean
-    public Binding priceBinding(Queue priceQueue, TopicExchange exchange) {
-        return BindingBuilder.bind(priceQueue).to(exchange).with("price-key");
     }
 
     @Bean

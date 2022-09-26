@@ -5,8 +5,8 @@ import java.io.Serializable;
 /**
  * Representation of a component of a guitar
  */
-public class Component implements Serializable{
-    
+public class Component implements Serializable {
+
     private String komponententyp;
     private String name;
     private String material;
@@ -19,7 +19,7 @@ public class Component implements Serializable{
     private String verfuegbarkeit;
     private String klangauswirkung;
 
-    public Component(){
+    public Component() {
         this.komponententyp = "";
         this.name = "";
         this.material = "";
@@ -34,16 +34,16 @@ public class Component implements Serializable{
     }
 
     public Component(String komponententyp,
-                        String name, 
-                        String material, 
-                        String herkunft, 
-                        String farbe, 
-                        String hersteller, 
-                        String form, 
-                        String gebrauchszustand, 
-                        String preis, 
-                        String verfuegbarkeit, 
-                        String klangauswirkung){
+            String name,
+            String material,
+            String herkunft,
+            String farbe,
+            String hersteller,
+            String form,
+            String gebrauchszustand,
+            String preis,
+            String verfuegbarkeit,
+            String klangauswirkung) {
         this.komponententyp = komponententyp;
         this.name = name;
         this.material = material;
@@ -136,7 +136,7 @@ public class Component implements Serializable{
     public void setKlangauswirkung(String klangauswirkung) {
         this.klangauswirkung = klangauswirkung;
     }
-    
+
     public String getKomponententyp() {
         return this.komponententyp;
     }
@@ -145,18 +145,57 @@ public class Component implements Serializable{
         this.komponententyp = komponententyp;
     }
 
+    public void set(String key, String value) {
+        switch (key) {
+            case ("komponententyp"):
+                setKomponententyp(value);
+                break;
+            case ("name"):
+                setName(value);
+                break;
+            case ("material"):
+                setMaterial(value);
+                break;
+            case ("herkunft"):
+                setHerkunft(value);
+                break;
+            case ("farbe"):
+                setFarbe(value);
+                break;
+            case ("hersteller"):
+                setHersteller(value);
+                break;
+            case ("form"):
+                setForm(value);
+                break;
+            case ("gebrauchszustand"):
+                setGebrauchszustand(value);
+                break;
+            case ("preis"):
+                setPreis(value);
+                break;
+            case ("verfuegbarkeit"):
+                setVerfuegbarkeit(value);
+                break;
+            case ("klangauswirkung"):
+                setKlangauswirkung(value);
+                break;
+        }
+    }
+
     @Override
     public String toString() {
-        return getKomponententyp() + ", " + 
-                getName() + ", " + 
-                getMaterial() + ", " + 
-                getHerkunft() + ", " + 
-                getFarbe() + ", " + 
-                getHersteller() + ", " + 
-                getForm() + ", " + 
-                getGebrauchszustand() + ", " + 
-                getPreis() + ", " + 
-                getVerfuegbarkeit() + ", " + 
-                getKlangauswirkung();
+        String string = "{\"komponententyp\":\"" + getKomponententyp() +
+                "\",\"name\":\"" + getName() +
+                "\",\"material\":\"" + getMaterial() +
+                "\",\"herkunft\":\"" + getHerkunft() +
+                "\",\"farbe\":\"" + getFarbe() +
+                "\",\"hersteller\":\"" + getHersteller() +
+                "\",\"form\":\"" + getForm() +
+                "\",\"gebrauchszustand\":\"" + getGebrauchszustand() +
+                "\",\"preis\":\"" + getPreis() +
+                "\",\"verfuegbarkeit\":\"" + getVerfuegbarkeit() +
+                "\",\"klangauswirkung\":\"" + getKlangauswirkung() + "\"}";
+        return string;
     }
 }
