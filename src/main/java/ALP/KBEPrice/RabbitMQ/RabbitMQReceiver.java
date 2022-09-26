@@ -36,7 +36,6 @@ public class RabbitMQReceiver {
             RabbitMessage rabbitMessage = new RabbitMessage("product", objectMapper.writeValueAsString(product));
             sender.send(rabbitMessage);
         } else if (message.getType().equals("getPrices")) {
-            System.out.println((String) message.getValue());
             List<Product> products = objectMapper.readValue((String) message.getValue(),
                     new TypeReference<List<Product>>() {
                     });
