@@ -15,7 +15,7 @@ public class MessagingConfig {
 
     @Bean
     public Queue mainQueue() {
-        return new Queue("philips-main-queue");
+        return new Queue("main-queue");
     }
 
     @Bean
