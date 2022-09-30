@@ -11,10 +11,10 @@ import java.io.Serializable;
 public class RabbitMQSender {
     @Autowired
     private AmqpTemplate rabbitTemplate;
-    @Autowired
-    private Queue priceQueue;
+
+    private Queue mainQueue=new Queue("main-queue");
 
     public void send(Serializable serializable) {
-        rabbitTemplate.convertAndSend(priceQueue.getName(), serializable);
+        rabbitTemplate.convertAndSend(mainQueue.getName(), serializable);
     }
 }
